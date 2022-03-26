@@ -20,6 +20,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 // 즉 분석한 것을 JSON 파일로 가져올 수 있게 설정. 
 app.use(bodyParser.json());
 
+// Register Router
 app.post('/register', (req,res)=>{
   // 회원가입할 때 필요한 정보들을 client에서 가져오면, 그것들을 DB에 저장.
   const user = new User(req.body)
@@ -33,6 +34,7 @@ app.post('/register', (req,res)=>{
     })
   })
 })
+
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
