@@ -73,7 +73,7 @@ userSchema.methods.generateToken = function(callback){
   })
 }
 
-userSchema.methods.findByToken = function(token, callback){
+userSchema.statics.findByToken = function(token, callback){
   let user = this;
   // 토큰 해독, verify 메서드 사용
   jwt.verify(token, 'secretToken', function(err, decoded){
