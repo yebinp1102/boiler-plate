@@ -71,7 +71,17 @@ userSchema.methods.generateToken = function(callback){
     if(err) return callback(err)
     callback(null, user)
   })
+}
 
+userSchema.methods.findByToken = function(token, callback){
+  let user = this;
+  // 토큰 해독, verify 메서드 사용
+  jwt.verify(token, 'secretToken', function(err, decoded){
+    user.findOne({"_id" : decoded, "token" : token}, function(err,user){
+      if(err) return callback(err);
+      callback(null, user)
+    })
+  })
 }
 
 const User = mongoose.model('User', userSchema);
