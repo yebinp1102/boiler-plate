@@ -18,6 +18,10 @@ mongoose.connect(config.mongoURI)
 
 app.get('/', (req, res) => res.send('서버 연결 성공!'))
 
+app.get('/api/hello', (req,res)=>{
+  res.send("Hello world!")
+})
+
 // Register Router
 app.post('/api/users/register', (req,res)=>{
   const user = new User(req.body)
