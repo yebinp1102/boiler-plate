@@ -16,7 +16,7 @@ mongoose.connect(config.mongoURI)
   .then(()=>console.log('MongoDB Connected...'))
   .catch(err => console.log(err))
 
-app.get('/', (req, res) => res.send('서버 연결 성공!'))
+app.get('/', (req, res) => res.send('서버 연결 성공!'));
 
 app.get('/api/hello', (req,res)=>{
   res.send("Hello world!")
