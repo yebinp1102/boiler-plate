@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../../_actions/user_action';
@@ -10,10 +9,6 @@ const LoginPage = () => {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
-  useEffect(()=>{
-    console.log(email, password)
-  },[email, password])
 
   const handleEmail = (e) => {
     setEmail(e.target.value)
