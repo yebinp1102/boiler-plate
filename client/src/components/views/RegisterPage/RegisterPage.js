@@ -13,10 +13,6 @@ const RegisterPage = () => {
   const [name, setName] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  useEffect(()=>{
-    console.log(email, password)
-  },[email, password])
-
   const handleEmail = (e) => {
     setEmail(e.target.value)
   }
